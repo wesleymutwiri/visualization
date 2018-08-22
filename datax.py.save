@@ -1,0 +1,17 @@
+import sys 
+import csv 
+import matplotlib.pyplot as plt
+
+
+with open('wesley_data.csv', mode='r') as csv_file:
+	csv_reader = csv.reader(csv_file, delimiter=',')
+	line_count = 0
+	for row in csv_reader:
+		X = row[0]
+		Y = row[1]
+		Z = row[2]
+		A = row[3]
+plt.plot(X,Y)
+		plt.show(
+
+
