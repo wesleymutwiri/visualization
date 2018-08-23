@@ -58,7 +58,7 @@ plt.show()
 
 
 '''
-The current code run time on my machine is almost a whole 10 minutes.
+The current code run time on my machine is almost a whole 15 minutes.
 Looking for ways of making the code faster and less heavy to process.
 Viable options include compiling the code first and/or change of code 
 structure to simplify work done by the interpreter
