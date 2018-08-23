@@ -57,3 +57,9 @@ plt.legend(bbox_to_anchor=(0., 1.02,1.,.102), loc=3, ncol=4, borderaxespad=0)
 plt.show()
 
 
+'''
+The current code run time on my machine is almost a whole 10 minutes.
+Looking for ways of making the code faster and less heavy to process.
+Viable options include compiling the code first and/or change of code 
+structure to simplify work done by the interpreter
+'''
