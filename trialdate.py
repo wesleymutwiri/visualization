@@ -1,8 +1,17 @@
 import sys 
+
+# importing csv library
 import csv 
+
+# importing matplotlib library
 import matplotlib.pyplot as plt
+
+# importing datetime library
 from datetime import datetime
+
+# importing numpy a requirement by the matplotlib library
 import numpy as np 
+
 # creating empty lists for storing of data from the csv files
 dates= []
 fixs= []
@@ -41,8 +50,10 @@ plt.plot_date(datex, kixx, label='dates kix1', color='blue', fmt='-')
 # using same y axis to get graph plot against date as the x axis
 plt.plot_date(datex,sp5x, label='dates sp5', color='green', fmt='-')
 
-# 
+# create a legend and styling of the graph views 
 plt.legend(bbox_to_anchor=(0., 1.02,1.,.102), loc=3, ncol=4, borderaxespad=0)
+
+# used to tell matplotlib to show the graph plotted on a new graph
 plt.show()
 
 
