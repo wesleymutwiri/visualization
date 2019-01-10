@@ -1,19 +1,30 @@
-import sys 
-import csv 
+#! /usr/bin/env python
+
+"""This script introduces some data handling and plotting tools."""
+import pandas as pd
 import matplotlib.pyplot as plt
 
-x= []
-y= []
+# Import the data from a csv file using pandas
 
-with open('wesley_data.csv', 'r') as csvfile:
-	plots = csv.reader(csvfile,delimiter=',')
-	csvfile.readline()
-	for row in plots:
-		x.append(row[0])
-		y.append(float(row[1]))
-plt.plot(x,y, label='Loaded from CSV file')
-plt.xlabel('Dates')
+
+def get_data(path):
+	"""Fetch the data."""
+	return pd.read_csv(path, parse_dates=True, index_col=0)
+
+
+data = get_data('./wesley_data.csv')
+
+fig, ax = plt.subplots()
+
+for name in data.columns.tolist():
+	ax.plot(data[name].index, data[name], label=name)
+
+plt.xlabel('Date')
 plt.ylabel('Y')
 plt.title("Sample trial in plotting graph")
 plt.legend()
-plt.show()
+plt.savefig('graphs/all_items.png')
+
+if __name__ == '__main__':
+	print("Data sample \n{}\n".format(data.head()))
+	print("Basic statistics of the data\n{}\n".format(data.describe()))
